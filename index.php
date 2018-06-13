@@ -1,18 +1,22 @@
-<?php
-include conexao.php;
+<?php 
+include "conexao.php";
 ?>
 <!DOCTYPE html>
 <html>
     <head>
     <meta charset="UTF-8">
     <title>Gerenciador de tarefas</title>
+    <style>
+        table,th,tr{border-style:solid black}
+        
+    </style>
     </head>
         <body>
             <h1>Gerenciador de Tarefas</h1>
-            <form>
+            <form action="conexao.php" method="post">
                 <fieldset>
                     <legend> Objetivo </legend>
-                    Objetivo <input type="text" name="descricao"/>
+                    Objetivo <input type="text" name="objetivo"/>
                            
                 
                     Data:<input type="date" name="prazo"/>
@@ -20,17 +24,27 @@ include conexao.php;
                 </fieldset>
                 <fieldset>
                    <legend>Disciplinas</legend>
-                   <input list="disciplinas" name="disciplinas">
-                        <datalist id="disciplinas">
-                          <option value="Gerenciamento de redes">
-                          <option value="Orientação a objetos">
-                          <option value="PHP">
-                          <option value="Banco de dados">
-                          <option value="Cabeamento estruturado">
-                        </datalist>
+                   <input type="text" name="disciplina"><br>
+                   
+                   
+                                   
+                   <input type="button" value="Adicionar" onclick="">              
+                                  
+                   
+                <?php $disciplinas = buscar_disciplinas(); ?>              
+                   
+                </fieldset>
+                <fieldset>
+                    <table>
+                        <th><tr>Disciplinas</tr></th>
+                    <?php foreach ($disciplinas as $disciplina):    ?>
+                    <tr>
+                        <td><?php  echo $disciplina; ?> </td>
                     
-                   <input type="button" value="Adicionar" onclick="">                
+                    </tr>
+                    <?php                    endforeach; ?>
                     
+                    </table>
                 </fieldset>
                 
                 <input type="submit"> 
