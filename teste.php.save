@@ -1,0 +1,16 @@
+<?php
+
+// We'll be granting access to only the arunranga.com domain 
+// which we think is safe to access this resource as application/xml
+
+if($_SERVER['HTTP_ORIGIN'] == "http://localhost:3000") {
+    header('Access-Control-Allow-Origin: http://arunranga.com');
+
+echo "
+ <P> tESTE DE DASHBOARD GRAFANA </P>";
+?>
+
+
+
+
+

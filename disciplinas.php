@@ -1,6 +1,6 @@
 <?php
 include 'conexao.php';
-
+/*
 function buscar_disciplinas($conexão){
 $selectDisciplicas = "SELECT * FROM disciplinas";
 
@@ -12,8 +12,8 @@ while ($row = mysqli_fetch_assoc($resultado)){
 
 return $disciplinas;
 }
-
-
+*/
+//buscar_disciplinas($conexão);
 
 /* 
  * To change this license header, choose License Headers in Project Properties.

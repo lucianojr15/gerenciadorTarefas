@@ -31,7 +31,7 @@ include "conexao.php";
                    <input type="button" value="Adicionar" onclick="">              
                                   
                    
-                <?php $disciplinas = buscar_disciplinas(); ?>              
+                <?php $disciplinas = buscar_disciplinas($conexao); ?>              
                    
                 </fieldset>
                 <fieldset>
