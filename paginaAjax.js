@@ -28,7 +28,23 @@ function teste(request){
         }
 }
 
-
+function criarFormulario(informacao){
+     
+            console.log(informacao);
+            var content = document.getElementById("content");
+            var table =   document.createElement("table");
+            content.appendChild(table);
+           
+            
+            for(i=0;i<informacao.length;i++){
+                 var tr = document.createElement("tr");
+                    table.appendChild(tr);
+                    var td = document.createElement("td");
+                    var value =document.createTextNode(informacao[i]);
+                    td.appendChild(value);
+                    tr.appendChild(td);
+            }
+}
 
 function buscarDisciplinas(){
     var request = new XMLHttpRequest();
@@ -39,16 +55,7 @@ function buscarDisciplinas(){
     if(request.readyState == 4){
         alert("Entrou no handler ")
         resultado = JSON.parse(request.responseText);
-            console.log(resultado);
-            var content = document.getElementById("content");
-            var table =   document.createElement("table");
-            content.appendChild(table);
-            var tr = document.createElement("tr");
-            table.appendChild(tr);
-            var td = document.createElement("td");
-            var value =document.createTextNode(resultado[0]);
-            td.appendChild(value);
-            tr.appendChild(td);
+        criarFormulario(resultado);    
     }    
     }; 
    
