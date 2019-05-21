@@ -38,6 +38,7 @@ function criarFormulario(informacao){
             
             for(i=0;i<informacao.length;i++){
                  var tr = document.createElement("tr");
+                    tr.addEventListener("click",onClikLinha(),false);
                     table.appendChild(tr);
                     var td = document.createElement("td");
                     var value =document.createTextNode(informacao[i]);
@@ -73,6 +74,11 @@ function buscarDisciplinas(){
     
     
   
+}
+
+
+function onClikLinha(){
+    alert("teste de adição de EventListener");
 }
 
 
